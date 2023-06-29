@@ -42,6 +42,11 @@ class BaseModel:
         from models import storage
         self.updated_at = datetime.now()
         storage.save()
+        
+    def delete(self):
+        """Deletes this BaseModel instance from the storage"""
+        from models import storage
+        storage.delete(self)
 
     def to_dict(self):
         """Convert instance into dict format"""

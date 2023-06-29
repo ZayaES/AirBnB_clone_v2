@@ -36,7 +36,7 @@ class HBNBCommand(cmd.Cmd):
             }
 
     def preloop(self):
-        """Prints if isatty is false"""
+        """Prints if is a tty is false"""
         if not sys.__stdin__.isatty():
             print('(hbnb)')
 
