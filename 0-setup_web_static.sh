@@ -5,7 +5,7 @@ sudo apt update
 sudo apt install -y nginx
 sudo mkdir -p /data/web_static/releases/test/
 sudo mkdir -p /data/web_static/shared
-sudo chown -R ubuntu:ubuntu /data/
+sudo chown -R ubuntu:ubuntu /data
 
 echo "my test deployment" >> /data/web_static/releases/test/index.html
 
