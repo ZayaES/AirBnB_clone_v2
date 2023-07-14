@@ -2,14 +2,13 @@
 #does what you see
 
 sudo apt update
-sudo apt install -y nginx
-sudo mkdir -p /data/web_static/releases/test/
-sudo mkdir -p /data/web_static/shared
-sudo chown -R ubuntu:ubuntu /data/
-
+sudo install nginx -y
+mkdir -p /data/web_static/releases/test/
+mkdir -p /data/web_static/shared
 echo "my test deployment" >> /data/web_static/releases/test/index.html
+ln -sf /data/web_static/current /data/web_static/test/
 
-ln -sf /data/web_static/releases/test/ /data/web_static/current
+chown -R ubuntu:ubuntu /data/
 
 sudo tee  /etc/nginx/sites-available/default > /dev/null <<EOT
 server {
