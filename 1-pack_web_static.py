@@ -5,25 +5,24 @@ from fabric.operations import local, sudo
 
 
 def do_pack():
-	""" packs a folder in archive"""
+    """ packs a folder in archive"""
 
-	dt = datetime.now()
-	new_file = "versions/web_static_{}{}{}{}{}{}.tgz".format(dt.year,
-							dt.month,
-							dt.day,
-							dt.hour,
-							dt.minute,
-							dt.second)
+    dt = datetime.now()
+    new_file = "versions/web_static_{}{}{}{}{}{}.tgz".format(dt.year,
+	  						     dt.month,
+							     dt.day,
+							     dt.hour,
+							     dt.minute,
+							     dt.second)
 
-	result = local("mkdir -p versions")
+    result = local("mkdir -p versions")
 
-	if (result.failed == True):
-		return None
-	ch_own = local("sudo chown -R $USER:$USER versions")
-	if (ch_own.failed == True):
-		return None
-	archive = local("tar -cvzf {} web_static".format(new_file))
-	if (archive.failed == True):
-		print(archive.failed)
-		return None
-	return new_file
+    if (result.failed is True):
+        return None
+    ch_own = local("sudo chown -R $USER:$USER versions")
+    if (ch_own.failed is True):
+        return None
+    archive = local("tar -cvzf {} web_static".format(new_file))
+    if (archive.failed is True):
+        return None
+    return new_file
