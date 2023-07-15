@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ a fab script to generate an archive on local"""
 from datetime import datetime
-from fabric.operations import local
+from fabric.operations import local, sudo
 
 
 def do_pack():
@@ -19,7 +19,11 @@ def do_pack():
 
 	if (result.failed == True):
 		return None
+	ch_own = sudo("sudo chown -R $USER:$USER versions")
+	if (ch_own.failed == True):
+		return None
 	archive = local("tar -cvzf {} web_static".format(new_file))
 	if (archive.failed == True):
+		print(archive.failed)
 		return None
 	return new_file
