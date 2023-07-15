@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ a fab script to generate an archive on local"""
 from datetime import datetime
-from fabric.api import local
+from fabric.operations import local
 
 
 def do_pack():
