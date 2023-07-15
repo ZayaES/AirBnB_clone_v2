@@ -10,6 +10,7 @@ sudo chown -R ubuntu:ubuntu /data
 echo "my test deployment" >> /data/web_static/releases/test/index.html
 
 ln -sf /data/web_static/releases/test/ /data/web_static/current
+sudo chown -R ubuntu:ubuntu /data
 
 sudo tee  /etc/nginx/sites-available/default > /dev/null <<EOT
 server {

@@ -2,6 +2,8 @@
 """ a fab script to generate an archive on local"""
 from datetime import datetime
 from fabric.api import local
+
+
 def do_pack():
 	""" packs a folder in archive"""
 
@@ -14,6 +16,7 @@ def do_pack():
 							dt.second)
 
 	result = local("mkdir -p versions")
+
 	if (result.failed == True):
 		return None
 	archive = local("tar -cvzf {} web_static".format(new_file))
