@@ -9,11 +9,11 @@ def do_pack():
 
     dt = datetime.now()
     new_file = "versions/web_static_{}{}{}{}{}{}.tgz".format(dt.year,
-	  						     dt.month,
-							     dt.day,
-							     dt.hour,
-							     dt.minute,
-							     dt.second)
+							      dt.month,
+							      dt.day,
+							      dt.hour,
+							      dt.minute,
+							      dt.second)
 
     result = local("mkdir -p versions")
 
