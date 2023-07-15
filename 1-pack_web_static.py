@@ -19,7 +19,7 @@ def do_pack():
 
 	if (result.failed == True):
 		return None
-	ch_own = sudo("sudo chown -R $USER:$USER versions")
+	ch_own = local("sudo chown -R $USER:$USER versions")
 	if (ch_own.failed == True):
 		return None
 	archive = local("tar -cvzf {} web_static".format(new_file))
