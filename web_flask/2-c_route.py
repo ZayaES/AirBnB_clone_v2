@@ -16,10 +16,11 @@ def hello():
 def hbnb():
     return "HBNB"
 
-@app.route('/c/{{ text }}')
+@app.route('/c/<text>')
 def display_text(text):
     form_text = text.replace('_', ' ')
     return "C" + form_text
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)

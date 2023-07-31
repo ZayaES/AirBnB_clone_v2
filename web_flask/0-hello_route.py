@@ -10,6 +10,7 @@ app.url_map.strict_slashes = False
 
 @app.route('/')
 def hello():
+    """ returns hello on query of /"""
     return "Hello HBNB!"
 
 if __name__ == "__main__":
