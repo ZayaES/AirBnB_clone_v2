@@ -21,7 +21,7 @@ def display_text(text):
     form_text = text.replace('_', ' ')
     return "C " + form_text
 
-@app.route('/python/<text>')
+@app.route('/python/(<text>)')
 def python(text="is cool"):
     form_text = text.replace('_', ' ')
     return "Python " + form_text
