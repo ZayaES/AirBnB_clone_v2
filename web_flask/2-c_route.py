@@ -19,7 +19,7 @@ def hbnb():
 @app.route('/c/<text>')
 def display_text(text):
     form_text = text.replace('_', ' ')
-    return "C" + form_text
+    return "C " + form_text
 
 
 if __name__ == "__main__":
