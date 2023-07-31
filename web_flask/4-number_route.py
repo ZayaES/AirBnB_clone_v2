@@ -31,8 +31,7 @@ def python(text=None):
 
 @app.route('/number/<int:n>')
 def number(n):
-    if isinstance(eval(n), int):
-        return n + " is a number"
+    return n + " is a number"
 
 
 if __name__ == "__main__":
