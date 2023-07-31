@@ -29,7 +29,7 @@ def python(text=None):
     form_text = text.replace('_', ' ')
     return "Python " + form_text
 
-@app.route('/number/<n>')
+@app.route('/number/<int:n>')
 def number(n):
     if isinstance(eval(n), int):
         return n + " is a number"
