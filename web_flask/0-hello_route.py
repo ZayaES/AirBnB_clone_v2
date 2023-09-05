@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 
-@app.route('/')
+@app.route('/airbnb-onepage/')
 def hello():
     """ returns hello on query of /"""
     return "Hello HBNB!"
