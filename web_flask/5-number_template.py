@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """A flask web application. Still don't know what I'm doing"""
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -12,26 +12,31 @@ app.url_map.strict_slashes = False
 def hello():
     return "Hello HBNB!"
 
+
 @app.route('/hbnb')
 def hbnb():
     return "HBNB"
+
 
 @app.route('/c/<text>')
 def display_text(text):
     form_text = text.replace('_', ' ')
     return "C " + form_text
 
+
 @app.route('/python/')
 @app.route('/python/<text>')
 def python(text=None):
     if text is None:
-        text="is cool"
+        text = "is cool"
     form_text = text.replace('_', ' ')
     return "Python " + form_text
+
 
 @app.route('/number/<int:n>')
 def number(n):
     return "{} is a number".format(n)
+
 
 @app.route('/number_template/<int:n>')
 def n_temp(n):
